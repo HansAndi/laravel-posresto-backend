@@ -8,7 +8,7 @@
         </div>
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
-            <li class="nav-item dropdown {{ Request::is('home') ? 'active' : '' }}">
+            {{-- <li class="nav-item dropdown {{ Request::is('home') ? 'active' : '' }}">
                 <a href="#"
                     class="nav-link has-dropdown"><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 <ul class="dropdown-menu">
@@ -34,7 +34,7 @@
                 <ul class="dropdown-menu">
                     <li class='{{ request()->routeIs('products.*') ? 'active' : '' }}'>
                         <a class="nav-link"
-                            href="{{ route('products.index') }}">General Dashboard</a>
+                            href="{{ route('products.index') }}">Products</a>
                     </li>
                 </ul>
             </li>
@@ -44,9 +44,25 @@
                 <ul class="dropdown-menu">
                     <li class='{{ request()->routeIs('categories.*') ? 'active' : '' }}'>
                         <a class="nav-link"
-                            href="{{ route('categories.index') }}">General Dashboard</a>
+                            href="{{ route('categories.index') }}">Categories</a>
                     </li>
                 </ul>
+            </li> --}}
+            <li class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                <a href="{{ route('home') }}"
+                    ><i class="fas fa-fire"></i><span>Dashboard</span></a>
+            </li>
+            <li class="{{ request()->routeIs('users.*') ? 'active' : '' }}">
+                <a href="{{ route('users.index') }}"
+                    ><i class="fas fa-fire"></i><span>Users</span></a>
+            </li>
+            <li class="{{ request()->routeIs('products.*') ? 'active' : '' }}">
+                <a href="{{ route('products.index') }}"
+                    ><i class="fas fa-fire"></i><span>Products</span></a>
+            </li>
+            <li class="{{ request()->routeIs('categories.*') ? 'active' : '' }}">
+                <a href="{{ route('categories.index') }}"
+                    ><i class="fas fa-fire"></i><span>Categories</span></a>
             </li>
         </ul>
     </aside>

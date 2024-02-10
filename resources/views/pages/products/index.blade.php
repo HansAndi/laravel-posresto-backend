@@ -30,26 +30,13 @@
                     </div>
                 </div>
 
-                <h2 class="section-title">Users</h2>
-                <p class="section-lead">
-                    You can manage all users, such as editing, deleting and more.
-                </p>
-
                 <div class="row mt-4">
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>All Posts</h4>
+                                <h4>All Products</h4>
                             </div>
                             <div class="card-body">
-                                <div class="float-left">
-                                    <select class="form-control selectric">
-                                        <option>Action For Selected</option>
-                                        <option>Move to Draft</option>
-                                        <option>Move to Pending</option>
-                                        <option>Delete Pemanently</option>
-                                    </select>
-                                </div>
                                 <div class="float-right">
                                     <form method="GET" action="{{ route('products.index') }}">
                                         <div class="input-group">
@@ -84,7 +71,7 @@
                                                     {{-- display no --}}
                                                     <td>{{ $loop->iteration }}</td>
                                                     <td>{{ $product->name }}</td>
-                                                    <td>{{ Number::currency($product->price, 'IDR') }}</td>
+                                                    <td>{{ Number::currency($product->price, 'IDR', 'in') }}</td>
                                                     <td>{{ $product->stock }}</td>
                                                     <td>{{ $product->category->name }}</td>
                                                     <td>{{ $product->status == 1 ? 'Active' : 'Inactive'}}</td>
